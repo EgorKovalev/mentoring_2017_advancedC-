@@ -27,7 +27,7 @@ namespace CustomCollection
 			//Task2 - a list of simple number
 			double result = Calculator.CalculateSum(Calculator.GenerateList(4));
 
-			//Task3 - comparing objects
+			//Task3 - comparing objects (https://msdn.microsoft.com/ru-ru/library/ms173147(v=vs.80).aspx)
 			var person1 = new Person("Alex", "Ivanov");
 			var person2 = new Person("Alex", "Ivanov");
 			Console.WriteLine(person1.Equals(person2));
