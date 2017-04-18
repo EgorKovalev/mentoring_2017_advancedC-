@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyCollection.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="CompareObjects\Person.cs" />
+    <Compile Include="CustomCollection\MyCollection.cs" />
+    <Compile Include="CustomCollection\Point.cs" />
+    <Compile Include="ListOfNumbers\Calculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
