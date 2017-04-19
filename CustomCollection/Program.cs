@@ -35,6 +35,6 @@ namespace CustomCollection
 			var person3 = new Person("Alex", "Ivanov");
 			var person4 = new Person("Alex", "NoIvanov");
 			Console.WriteLine(person3.Equals(person4));
-        }
+		}
     }
 }

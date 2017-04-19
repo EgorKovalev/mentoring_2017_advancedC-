@@ -37,7 +37,21 @@ namespace CustomCollection.CompareObjects
 
 		public override int GetHashCode()
 		{
-			return 10;
+			return (FirstName + LastName).GetHashCode();
+		}
+
+		public static bool operator == (Person a, Person b)
+		{
+			if (System.Object.ReferenceEquals(a, b)) return true;
+			
+			if (((object)a == null) || ((object)b == null)) return false;
+
+			return (a.FirstName.Equals(b.FirstName)) && (a.LastName.Equals(b.LastName));
+		}
+
+		public static bool operator != (Person a, Person b)
+		{
+			return !(a == b);
 		}
 	}
 }
