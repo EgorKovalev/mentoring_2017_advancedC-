@@ -12,6 +12,7 @@ namespace CustomCollection.ListOfNumbers
 
 		/* (https://habrahabr.ru/post/133037/)
 		   (http://stackoverflow.com/questions/1042902/most-elegant-way-to-generate-prime-numbers) */
+		
 		public List<int> GenerateList(int size)
 		{
 			List<int> primes = new List<int>();
@@ -44,14 +45,21 @@ namespace CustomCollection.ListOfNumbers
 
 		public double CalculateSum(List<int> numbers)
 		{
-			double result = 0;
-
-			for (int i = 0; i < numbers.Count; i++)
+			if(numbers.Count != 0)
 			{
-				result += numbers[i] / (i + 1);
-			}
+				double result = 0;
 
-			return Math.Floor(result);
+				for (int i = 0; i < numbers.Count; i++)
+				{
+					result += numbers[i] / (i + 1);
+				}
+
+				return Math.Floor(result);
+			}
+			else
+			{
+				return 0;
+			}
 		}
 	}
 }
