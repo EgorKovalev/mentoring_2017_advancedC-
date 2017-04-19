@@ -31,10 +31,12 @@ namespace CustomCollection
 			var person1 = new Person("Alex", "Ivanov");
 			var person2 = new Person("Alex", "Ivanov");
 			Console.WriteLine(person1.Equals(person2));
+			Console.WriteLine(person1 == person2);
 
 			var person3 = new Person("Alex", "Ivanov");
 			var person4 = new Person("Alex", "NoIvanov");
 			Console.WriteLine(person3.Equals(person4));
+			Console.WriteLine(person3 != person4);
 		}
     }
 }

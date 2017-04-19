@@ -6,26 +6,15 @@ using System.Threading.Tasks;
 
 namespace CustomCollection.CompareObjects
 {
-	public class Person : System.Object
+	public class Person
 	{
-		private string FirstName;
-		private string LastName;
+		private readonly string FirstName;
+		private readonly string LastName;
 
 		public Person(string firstName, string lastName)
 		{
 			FirstName = firstName;
 			LastName = lastName;
-		}
-
-		public override bool Equals(System.Object obj)
-		{			
-			if (obj == null) return false;
-						
-			Person person = (Person)obj;
-			
-			if ((System.Object)person == null) return false;
-
-			return (this.FirstName.Equals(person.FirstName)) && (this.LastName.Equals(person.LastName));
 		}
 
 		public bool Equals(Person person)
@@ -46,7 +35,7 @@ namespace CustomCollection.CompareObjects
 			
 			if (((object)a == null) || ((object)b == null)) return false;
 
-			return (a.FirstName.Equals(b.FirstName)) && (a.LastName.Equals(b.LastName));
+			return a.Equals(b);
 		}
 
 		public static bool operator != (Person a, Person b)
