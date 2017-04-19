@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace CustomCollection.ListOfNumbers
 {
-	public static class Calculator
+	public class Calculator
 	{
-		// (https://habrahabr.ru/post/133037/)
-		// (http://stackoverflow.com/questions/1042902/most-elegant-way-to-generate-prime-numbers)
-		public static List<int> GenerateList(int size)
+		private const int INITIAL_VALUE = 2;
+
+		/* (https://habrahabr.ru/post/133037/)
+		   (http://stackoverflow.com/questions/1042902/most-elegant-way-to-generate-prime-numbers) */
+		public List<int> GenerateList(int size)
 		{
 			List<int> primes = new List<int>();
-			primes.Add(2);
+			primes.Add(INITIAL_VALUE);
+			Console.WriteLine("Added: " + INITIAL_VALUE);
+			
 			int nextPrime = 3;
 			
 			while (primes.Count < size)
@@ -38,7 +42,7 @@ namespace CustomCollection.ListOfNumbers
 			return primes;
 		}
 
-		public static double CalculateSum(List<int> numbers)
+		public double CalculateSum(List<int> numbers)
 		{
 			double result = 0;
 

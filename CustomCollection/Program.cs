@@ -23,12 +23,18 @@ namespace CustomCollection
 			int sizeArray = 0;
 
 			Console.WriteLine("Enter size array");
-			while(!int.TryParse(Console.ReadLine(), out sizeArray))
+
+			string input = Console.ReadLine();
+			while (!int.TryParse(input, out sizeArray) || sizeArray < 1)
 			{
 				Console.WriteLine("Enter correct value");
+				input = Console.ReadLine();
 			}
+
+			Calculator calculator = new Calculator();
+			double calculatedResult = calculator.CalculateSum(calculator.GenerateList(sizeArray));
 			
-			Console.WriteLine("\nResult: " + Calculator.CalculateSum(Calculator.GenerateList(sizeArray)));
+			Console.WriteLine("\nResult: " + calculatedResult);
 			Console.ReadLine();
 
 			//Task3 - comparing objects (https://msdn.microsoft.com/ru-ru/library/ms173147(v=vs.80).aspx)
