@@ -19,13 +19,17 @@ namespace CustomCollection
 
 			points = points.OrderBy(x => x, new PointComparer()).ToList();
 
-			foreach(var item in points)
-			{
-				Console.WriteLine(item.ToString());
-			}
-
 			//Task2 - a list of simple number
-			double result = Calculator.CalculateSum(Calculator.GenerateList(4));
+			int sizeArray = 0;
+
+			Console.WriteLine("Enter size array");
+			while(!int.TryParse(Console.ReadLine(), out sizeArray))
+			{
+				Console.WriteLine("Enter correct value");
+			}
+			
+			Console.WriteLine("\nResult: " + Calculator.CalculateSum(Calculator.GenerateList(sizeArray)));
+			Console.ReadLine();
 
 			//Task3 - comparing objects (https://msdn.microsoft.com/ru-ru/library/ms173147(v=vs.80).aspx)
 			var person1 = new Person("Alex", "Ivanov");

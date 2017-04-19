@@ -8,19 +8,34 @@ namespace CustomCollection.ListOfNumbers
 {
 	public static class Calculator
 	{
+		// (https://habrahabr.ru/post/133037/)
+		// (http://stackoverflow.com/questions/1042902/most-elegant-way-to-generate-prime-numbers)
 		public static List<int> GenerateList(int size)
 		{
-			Random random = new Random();
-
-			List<int> numbers = new List<int>();			
-			numbers.Add(2);
-
-			for (int i = 1; i < size; i++)
+			List<int> primes = new List<int>();
+			primes.Add(2);
+			int nextPrime = 3;
+			
+			while (primes.Count < size)
 			{
-				numbers.Add(random.Next(0, 10));
+				int sqrt = (int)Math.Sqrt(nextPrime);
+				bool isPrime = true;
+				for (int i = 0; (int)primes[i] <= sqrt; i++)
+				{
+					if (nextPrime % primes[i] == 0)
+					{
+						isPrime = false;
+						break;
+					}
+				}
+				if (isPrime)
+				{
+					primes.Add(nextPrime);
+					Console.WriteLine("Added: " + nextPrime);
+				}
+				nextPrime += 2;
 			}
-
-			return numbers;
+			return primes;
 		}
 
 		public static double CalculateSum(List<int> numbers)
